@@ -7,16 +7,14 @@
 struct Properties
 {
 public:
-    Properties(std::string texID, int x, int y, int w, int h) {
+    Properties(int x, int y, int w, int h) {
         this->x = x;
         this->y = y;
         this->width = w;
         this->height = h;
-        this->texID = texID;
     }
 
 public:
-    std::string texID;
     int width, height;
     float x, y;
 };
@@ -26,7 +24,6 @@ class GameObject : public Object
 public:
     GameObject(Properties* props) 
     : 
-    texID(props->texID),
     width(props->width),
     height(props->height) 
     {
@@ -39,7 +36,6 @@ public:
 protected:
     Transform* transform;
     int width, height;
-    std::string texID;
 };
 
 #endif //GAME_OBJECT_HPP

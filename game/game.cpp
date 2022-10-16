@@ -4,9 +4,10 @@
 Game::Game(int w, int h, const std::string& title)
 {
     Engine::get_instance()->init(w,h,title);
-    TextureManager::get_instance()->load_tex("frizard", "../res/frizard_idle.png");
+    TextureManager::get_instance()->load_tex("frizard_idle", "../res/frizard/frizard_idle.png");
+    TextureManager::get_instance()->load_tex("frizard_run", "../res/frizard/frizard_run.png");
 
-    frizard = new Frizard(new Properties("frizard", 100, 200, 124, 124));
+    frizard = new Frizard(new Properties(100, 200, 124, 124));
 }
 
 void Game::run()

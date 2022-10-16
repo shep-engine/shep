@@ -3,6 +3,7 @@
 
 #include <ecs/entity.hpp>
 #include <physics/rigidbody.hpp>
+#include <SDL2/SDL.h>
 
 class Frizard : public Entity
 {
@@ -14,6 +15,8 @@ public:
     void clean();
 private:
     int row, frame_count, anim_speed, frame;
+    std::string texID;
+    SDL_RendererFlip flip;
     RigidBody* rb;
 };
 
